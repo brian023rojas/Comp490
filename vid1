@@ -1,0 +1,21 @@
+Professor Dewey Videos
+Meeting 1 (9/21) Video Notes
+
+What is a Finite State Machine? 
+	- states | Transitions between states
+
+---Images
+There are two states that we have for a lock and we can transition to either state depending on the events that occur in between the lock. 
+
+—--
+Images....
+
+Fetch: Load an instruction into the instruction register 
+Decode: Look at the instruction in the instruction register
+Execute: actually execute the instruction
+
+Above that is 5 states that can only support 3 instructions. In reality your going to need a separate state for every instruction
+
+One Problem with finite state machines is they can get very big very quickly
+
+
