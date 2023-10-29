@@ -15,7 +15,6 @@ Testing tools for unit and system-level testing
 
 
 
-
 SCALA
 Side effect: A function is said to be having side effects if it does any of the following other than just returning a result: Modifies an existing variable. Reads from a file or writes to a file. Modifies a data structure (e.g., array, list).
 
@@ -24,3 +23,115 @@ The object keyword creates a new singleton type, which is like a class that only
 Scala has no equivalent to Java’s static keyword, and an object is often used in Scala where you might use a class with static members in Java.
 
 Scala is also a functional language in the sense that every function is a value. Scala provides a lightweight syntax for defining anonymous functions, it supports higher-order functions, it allows functions to be nested, and it supports currying.
+Every value in Scala is what’s called an object, and each object may have zero or more (pg18)
+
+When writing purely functional programs, we’ll often find it useful to write a function that accepts other functions as arguments. This is called a higher-order function (HOF) (Pg 19)
+
+
+
+Functional Programming in Scala: Notes and Examples
+
+1. First-Class Functions:
+
+In Scala, functions are first-class citizens. You can define functions as values and pass them as arguments to other functions.
+
+Example:
+// Define a function as a value
+val add: (Int, Int) => Int = (a, b) => a + b
+
+// Use the function
+println(add(2, 3)) // Output: 5
+
+
+2. Higher-Order Functions:
+
+A higher-order function is a function that takes one or more functions as parameters or returns a function as a result.
+
+Example:
+// Define a higher-order function
+def applyFunction(f: Int => Int, x: Int): Int = f(x)
+
+// Use the higher-order function
+println(applyFunction((a: Int) => a * 2, 5)) // Output: 10
+
+
+3. Pattern Matching:
+
+Pattern matching is a powerful feature in Scala that allows you to match complex data structures and extract values.
+
+Example:
+// Define a case class
+case class Person(name: String, age: Int)
+
+// Use pattern matching
+val person = Person("Alice", 30)
+
+person match {
+  case Person("Alice", 30) => println("Matched Alice, age 30")
+  case _ => println("No match")
+}
+
+
+4. Immutable Data Structures:
+
+In functional programming, data is usually immutable. Once a data structure is created, it cannot be modified. Instead, you create a new data structure with the updated values.
+
+Example:
+// Define an immutable list
+val numbers = List(1, 2, 3)
+
+// Create a new list with updated values
+val updatedNumbers = numbers.map(_ * 2)
+
+// Print the original and updated lists
+println(numbers) // Output: List(1, 2, 3)
+println(updatedNumbers) // Output: List(2, 4, 6)
+
+
+5. Anonymous Functions:
+
+Scala supports anonymous functions, which are functions defined without a name.
+
+Example:
+// Define an anonymous function
+val multiplyByTwo = (x: Int) => x * 2
+
+// Use the anonymous function
+println(multiplyByTwo(4)) // Output: 8
+
+
+Examples of Scala syntax:
+
+1. Defining Variables:
+val x = 10            // Immutable variable
+var y = 20            // Mutable variable
+
+2. Defining Functions:
+def add(a: Int, b: Int): Int = {
+  a + b
+}
+
+3. Pattern Matching:
+val color = "red"
+
+color match {
+  case "red" => println("It's red!")
+  case "blue" => println("It's blue!")
+  case _ => println("Unknown color")
+}
+
+4. Case Classes:
+case class Point(x: Int, y: Int)
+
+val p = Point(1, 2)
+println(p.x)   // Output: 1
+
+5. Higher-Order Functions and Anonymous Functions: (other examples include pg 21)
+val numbers = List(1, 2, 3, 4, 5)
+
+val doubledNumbers = numbers.map(x => x * 2)
+println(doubledNumbers) // Output: List(2, 4, 6, 8, 10)
+
+
+
+
