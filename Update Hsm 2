@@ -1,0 +1,55 @@
+Professor Dewey Videos
+Meeting 1 Video Notes
+
+What is a Finite State Machine? 
+	- states | Transitions between states
+
+
+There are two states that we have for a lock and we can transition to either state depending on the events that occur in between the lock. 
+
+—--
+
+
+Fetch: Load an instruction into the instruction register 
+Decode: Look at the instruction in the instruction register
+Execute: actually execute the instruction
+
+Above that is 5 states that can only support 3 instructions. In reality your going to need a separate state for every instruction
+
+One Problem with finite state machines is they can get very big very quickly
+	HSM Video (Outside resources included in here)
+
+
+https://www.youtube.com/watch?v=lUvUNuUMQHo&ab_channel=QuantumLeaps%2CLLC
+
+
+Finite state machines and hierarchical state machines differ greatly from one another.
+First of all, they may support state hierarchy, which is essential for their implementation. 
+
+The example offered is the diffusion of a bomb, in which the current state machine needs to be expanded with a new "diffused" state. The additional state must be added to the code, and the board support package must be configured to facilitate the multiplexed input pin's use. 
+
+The speaker addresses state transition explosion, another name for the problem of repetitions in conventional state machines, in this section.
+ The reason for this issue is that the "dry principle," or "don't repeat yourself," is one of the most crucial guidelines for software development. 
+Because of this, state machines can be challenging to scale for more complicated issues and to maintain and debug. 
+
+States can exist inside other states according to a technique called hierarchical state nesting, which creates a state hierarchy in which the actions of the superstate also affect its substrates. This enhances the scalability and dependability of state machines by enabling the removal of repetitions.
+
+Hierarchical state machines are implemented within the QPC framework. 
+The framework's built-in mechanisms can be utilized to code the change from a diffused to an armed state. 
+
+Second vid (https://www.youtube.com/watch?v=NxV7JlU0-F4&embeds_referring_euri=https%3A%2F%2Fwww.state-machine.com%2Ffsm&embeds_referring_origin=https%3A%2F%2Fwww.state-machine.com&source_ve_path=MjM4NTE&feature=emb_title&ab_channel=QuantumLeaps%2CLLC) 
+
+
+
+
+
+
+ 
+Whichever state inherits the transition can result in distinct exit action sequences for the same transition. To illustrate, suppose we dispatch events twice in a row. In both cases, transition e triggers separate state configurations, once when the current state is s211 and once when it is s11. As a result, the actions taken are different. 
+The video uses the QHSM TST state machine to illustrate his points on the semantics of hierarchical state machines (HSMs) in this segment. As demonstrated in the example where event d is sent but generates no output, one frequent problem in HSMs is when events are disregarded because of guards. 
+The video emphasizes how crucial it is to terminate HSMs correctly, clarifying that the escape key-triggered terminate event is an internal transition that never initiates exit or entry to carry out departure activities.
+
+
+
+
+
